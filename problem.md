@@ -1,0 +1,16 @@
+- two providers
+- failover
+-
+
+- two providers, gateways locally
+- sevice, which has a queue tasks, each task makes a requuest
+- request to the primary
+- request status decides the change in state
+- single service, queried
+- 100% of requests: primary?
+- when primary is not healthy, 5% goes to primary, and 95% goes to secondary
+- random.random() > .95
+- two states
+- prim healthy: query primary, fails: n_fails++, n_successes = 0,
+- prim unhealthy: query primary/sec using random.random, successes: n_successes++, n_fails = 0
+- every request, there's a state change depending on healthy: n_fails >= x, or unhealthy: n_successes >= y
