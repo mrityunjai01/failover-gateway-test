@@ -59,7 +59,7 @@ def service(_):
             req = requests.get(secondary_gateway)
 
 
-if __name__ == "__main__ ":
+if __name__ == "__main__":
     queue = [0 for _ in range(10000)]
     for task in queue:
         print(f"queueing {task}")
