@@ -12,8 +12,8 @@ import random
 X = 5
 Y = 10
 PRIMARY_TRAFFIC = 95.0 / 100
-primary_gateway = "localhost:9000"
-secondary_gateway = "localhost:9001"
+primary_gateway = "http://localhost:9000"
+secondary_gateway = "http://localhost:9001"
 
 
 @dataclasses.dataclass
@@ -62,4 +62,4 @@ def service(_):
 if __name__ == "__main__":
     queue = [0 for _ in range(10000)]
     for task in queue:
-        print(f"queueing {task}")
+        service(task)
