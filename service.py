@@ -11,7 +11,7 @@ import random
 
 X = 5
 Y = 10
-PRIMARY_TRAFFIC = 95 / 100
+PRIMARY_TRAFFIC = 95.0 / 100
 primary_gateway = "localhost:9000"
 secondary_gateway = "localhost:9001"
 
@@ -60,6 +60,6 @@ def service(_):
 
 
 if __name__ == "__main__ ":
-    queue = [None for _ in range(10000)]
+    queue = [0 for _ in range(10000)]
     for task in queue:
-        service(task)
+        print(f"queueing {task}")
